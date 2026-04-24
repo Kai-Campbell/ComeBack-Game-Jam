@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cu6php2okrq1x"
+path="res://.godot/imported/Golf.map-71fddfb7e5f723b84491d5ad0a553da6.tres"
+
+[deps]
+
+source_file="res://Assets/Maps/Golf.map"
+dest_files=["res://.godot/imported/Golf.map-71fddfb7e5f723b84491d5ad0a553da6.tres"]
+
+[params]
+

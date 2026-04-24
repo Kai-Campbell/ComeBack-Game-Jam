@@ -2,21 +2,35 @@
 
 [ext_resource type="Script" uid="uid://dp22a58pjmeu3" path="res://Scripts/player.gd" id="1_v0iea"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v0iea"]
+bounce = 0.5
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_f60y1"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_v0iea"]
 
-[node name="Player" type="RigidBody3D" unique_id=2031177303]
+[node name="Player" type="Node3D" unique_id=935472511]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="CameraGimbal" type="Node3D" parent="." unique_id=1215290697]
+
+[node name="Camera3D" type="Camera3D" parent="CameraGimbal" unique_id=355930355]
+transform = Transform3D(0.16666667, 0, 0, 0, 0.15661544, 0.05700336, 0, -0.05700336, 0.15661544, 0, 1.1782302, 1.4400272)
+
+[node name="Player" type="RigidBody3D" parent="." unique_id=2031177303]
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_v0iea")
 script = ExtResource("1_v0iea")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=965755255]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=965755255]
 shape = SubResource("SphereShape3D_f60y1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=244686982]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=244686982]
 mesh = SubResource("SphereMesh_v0iea")
 
-[node name="CameraRig" type="Node3D" parent="." unique_id=445067935]
+[node name="CameraRig" type="Node3D" parent="Player" unique_id=445067935]
 
-[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=2114303798]
-transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0, 1.4937313, 2.0887096)
-current = true
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Player" unique_id=899926094]
+remote_path = NodePath("../../CameraGimbal")
+update_rotation = false
+update_scale = false

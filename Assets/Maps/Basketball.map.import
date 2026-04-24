@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://bftng3mfansks"
+path="res://.godot/imported/Basketball.map-66d6ac0cc34fbe9e086589e778489c09.tres"
+
+[deps]
+
+source_file="res://Assets/Maps/Basketball.map"
+dest_files=["res://.godot/imported/Basketball.map-66d6ac0cc34fbe9e086589e778489c09.tres"]
+
+[params]
+
