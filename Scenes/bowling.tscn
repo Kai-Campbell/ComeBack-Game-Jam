@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://csj2y1vrla1nr"]
+
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_r1yen"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_kvu08"]
+
+[node name="Bowling" type="Node3D" unique_id=207900320]
+
+[node name="FuncGodotMap" type="Node3D" parent="." unique_id=1122251967]
+script = ExtResource("1_r1yen")
+map_settings = ExtResource("2_kvu08")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cd0ha3aqlucpd"]
+
+[ext_resource type="Script" uid="uid://dp22a58pjmeu3" path="res://Scripts/player.gd" id="1_v0iea"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f60y1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_v0iea"]
+
+[node name="Player" type="RigidBody3D" unique_id=2031177303]
+script = ExtResource("1_v0iea")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=965755255]
+shape = SubResource("SphereShape3D_f60y1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=244686982]
+mesh = SubResource("SphereMesh_v0iea")
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=445067935]
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=2114303798]
+transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0, 1.4937313, 2.0887096)
+current = true

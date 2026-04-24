@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c52rkripjju4i"]
+
+[ext_resource type="Texture2D" uid="uid://cycs1s5ll8q6v" path="res://Assets/textures/Tiny Textures 2/256x256/Wood/Wood_11-256x256.png" id="1_cbk3t"]
+
+[resource]
+albedo_texture = ExtResource("1_cbk3t")
+metallic_specular = 0.0
+texture_filter = 2

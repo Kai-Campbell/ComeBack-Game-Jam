@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dkwh20rd7ipvd"]
+
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_0mm1t"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_y2i4j"]
+
+[node name="Soccer" type="Node3D" unique_id=679614493]
+
+[node name="FuncGodotMap" type="Node3D" parent="." unique_id=168016910]
+script = ExtResource("1_0mm1t")
+map_settings = ExtResource("2_y2i4j")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
