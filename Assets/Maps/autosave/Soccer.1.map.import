@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://d4kbpkad8ud52"
+path="res://.godot/imported/Soccer.1.map-84b605cb935c6ebf5ddd0dc1a94b1de1.tres"
+
+[deps]
+
+source_file="res://Assets/Maps/autosave/Soccer.1.map"
+dest_files=["res://.godot/imported/Soccer.1.map-84b605cb935c6ebf5ddd0dc1a94b1de1.tres"]
+
+[params]
+

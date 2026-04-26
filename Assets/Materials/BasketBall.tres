@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://sfpqec0e7f32"]
+
+[ext_resource type="Texture2D" uid="uid://bqtnuyo51h4gl" path="res://Assets/Images/balldimpled.png" id="1_bslok"]
+
+[resource]
+albedo_texture = ExtResource("1_bslok")

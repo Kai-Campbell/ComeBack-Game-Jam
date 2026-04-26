@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cv7nhohqyu10h"]
+
+[ext_resource type="Script" uid="uid://buwiae6itfufg" path="res://Scripts/ai.gd" id="1_ayk67"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j4706"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_j4706"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ayk67"]
+size = Vector3(1.6030388, 1, 1.6379089)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayk67"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xv65i"]
+material = SubResource("StandardMaterial3D_ayk67")
+
+[node name="AI" type="Node3D" unique_id=1064996368]
+script = ExtResource("1_ayk67")
+home = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1945539367]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0)
+
+[node name="NavigationLink3D" type="NavigationLink3D" parent="CharacterBody3D" unique_id=456265313]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1970407680]
+shape = SubResource("CapsuleShape3D_j4706")
+
+[node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D" unique_id=433490586]
+billboard = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1986537531]
+mesh = SubResource("CapsuleMesh_j4706")
+
+[node name="Area3D" type="Area3D" parent="CharacterBody3D" unique_id=1887281292]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Area3D" unique_id=1643793996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00828743, 0, 0.011978116)
+shape = SubResource("BoxShape3D_ayk67")
+debug_color = Color(0.97241205, 0, 0.44452727, 0.41960785)
+
+[node name="Shirt" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1790970297]
+transform = Transform3D(1.018, 0, 0, 0, 0.443, 0, 0, 0, 1.01, 0, 0, 0)
+mesh = SubResource("CylinderMesh_xv65i")
+
+[node name="Head" type="Node3D" parent="." unique_id=1794167698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.297402, 0)
+
+[connection signal="body_entered" from="CharacterBody3D/Area3D" to="." method="_on_area_3d_body_entered"]

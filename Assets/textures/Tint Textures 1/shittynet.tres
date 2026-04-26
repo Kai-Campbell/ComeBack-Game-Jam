@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7shp51u5rir2"]
+
+[ext_resource type="Texture2D" uid="uid://cog56x6y3acyk" path="res://Assets/textures/Tint Textures 1/shittynet.png" id="1_gwv8f"]
+
+[resource]
+albedo_texture = ExtResource("1_gwv8f")
+metallic_specular = 0.0
+texture_filter = 2

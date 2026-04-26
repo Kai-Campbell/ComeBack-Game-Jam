@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cd0ha3aqlucpd"]
 
 [ext_resource type="Script" uid="uid://dp22a58pjmeu3" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://cibgvcobbpkge" path="res://Scripts/spring_arm_3d.gd" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://b8o0qpuypm2md" path="res://Assets/Images/Signal.png" id="3_6t5aa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v0iea"]
 bounce = 0.5
@@ -9,28 +11,91 @@ bounce = 0.5
 
 [sub_resource type="SphereMesh" id="SphereMesh_v0iea"]
 
-[node name="Player" type="Node3D" unique_id=935472511]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvnsp"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
+atlas = ExtResource("3_6t5aa")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
+atlas = ExtResource("3_6t5aa")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
+atlas = ExtResource("3_6t5aa")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("3_6t5aa")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8erm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgqql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkybt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node3D" unique_id=935472511 groups=["Player"]]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="CameraGimbal" type="Node3D" parent="." unique_id=1215290697]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CameraGimbal" unique_id=355930355]
-transform = Transform3D(0.16666667, 0, 0, 0, 0.15661544, 0.05700336, 0, -0.05700336, 0.15661544, 0, 1.1782302, 1.4400272)
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraGimbal" unique_id=447533557]
+spring_length = 4.0
+script = ExtResource("2_cvnsp")
 
-[node name="Player" type="RigidBody3D" parent="." unique_id=2031177303]
+[node name="Camera3D" type="Camera3D" parent="CameraGimbal/SpringArm3D" unique_id=355930355]
+transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0)
+
+[node name="Ball" type="RigidBody3D" parent="." unique_id=2031177303 groups=["Player"]]
+collision_layer = 5
+collision_mask = 5
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_v0iea")
 script = ExtResource("1_v0iea")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=965755255]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball" unique_id=965755255]
 shape = SubResource("SphereShape3D_f60y1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=244686982]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball" unique_id=244686982]
 mesh = SubResource("SphereMesh_v0iea")
 
-[node name="CameraRig" type="Node3D" parent="Player" unique_id=445067935]
+[node name="CameraRig" type="Node3D" parent="Ball" unique_id=445067935]
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Player" unique_id=899926094]
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Ball" unique_id=899926094]
 remote_path = NodePath("../../CameraGimbal")
 update_rotation = false
 update_scale = false
+
+[node name="Antena" type="CSGBox3D" parent="Ball" unique_id=289994019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.051832043, 0.42688888, 0.48377725)
+size = Vector3(0.017807007, 0.8331909, 0.013189454)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Ball/Antena" unique_id=338295921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40781838, 0)
+radius = 0.020557491
+material = SubResource("StandardMaterial3D_cvnsp")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Ball/Antena" unique_id=1113024618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5097595, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_8erm5")
+autoplay = "default"
+frame_progress = 0.24106652

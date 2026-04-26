@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bdex3fejqtmfj"]
+
+[ext_resource type="Script" uid="uid://dggiuten3v4g1" path="res://Scripts/UI_BasketBall.gd" id="1_fm3gb"]
+[ext_resource type="Texture2D" uid="uid://bb2rcrirtf3af" path="res://Assets/Images/ScoreBug.png" id="2_cnqbm"]
+
+[node name="BasketBall UI" type="Control" unique_id=1280335478]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fm3gb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=364935762]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -244.71997
+offset_top = -81.0
+offset_right = 244.71997
+offset_bottom = 185.0
+grow_horizontal = 2
+texture = ExtResource("2_cnqbm")
+expand_mode = 1
+
+[node name="Home" type="Label" parent="." unique_id=551617943]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 8.0
+offset_right = 453.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "82"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Away" type="Label" parent="." unique_id=409360004]
+layout_mode = 0
+offset_left = 684.0
+offset_top = 8.0
+offset_right = 755.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0.60026634, 1.92523e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "84"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="." unique_id=67571143]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_right = 73.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=649760930]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

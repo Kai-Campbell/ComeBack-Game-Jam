@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://bgu3886hklubs"
+path="res://.godot/imported/Basketball.2.map-2cf7014c5738bd237f362ff7c74741af.tres"
+
+[deps]
+
+source_file="res://Assets/Maps/autosave/Basketball.2.map"
+dest_files=["res://.godot/imported/Basketball.2.map-2cf7014c5738bd237f362ff7c74741af.tres"]
+
+[params]
+
