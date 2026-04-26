@@ -4,6 +4,8 @@ enum STATE {Wander, Run, Wait, Shoot, Idle}
 var state : STATE = STATE.Idle
 var wait_timer = 0.5
 var wait_timer_count = 0.0
+var time_till_reset = 6.0
+var reset_timer = 0.0
 
 @export var home : bool
 @onready var shirt: MeshInstance3D = $Shirt
@@ -50,12 +52,14 @@ func _physics_process(delta: float) -> void:
 
 
 func idle():
+	reset_timer = time_till_reset
 	velocity = Vector3.ZERO
 	wait_timer_count = wait_timer
 	state = STATE.Wait
 	
 
 func wait(delta):
+	reset_timer -= delta
 	wait_timer_count -= delta
 	if wait_timer_count <= 0.0:
 		var target = get_random_spot()
@@ -63,6 +67,8 @@ func wait(delta):
 		var safe_target = NavigationServer3D.map_get_closest_point(nav_map, target)
 		navigation_agent_3d.target_position = safe_target
 		state = STATE.Wander
+	if time_till_reset <= 0.0:
+		state = STATE.Idle
 
 
 func wander():
@@ -75,6 +81,8 @@ func wander():
 
 func run():
 	var current_pos = global_position
+	if ball == null:
+		state = STATE.Idle
 	navigation_agent_3d.target_position = ball.global_position
 	var next_pos = navigation_agent_3d.get_next_path_position()
 	var direction = (next_pos - current_pos).normalized()
@@ -98,7 +106,6 @@ func _on_ball_detection_body_entered(body: Node3D) -> void:
 
 func _on_ball_detection_body_exited(body: Node3D) -> void:
 	if body.owner.is_in_group("Player"):
-		ball = null
 		ball_close = false
 
 func _on_shoot_box_body_entered(body: Node3D) -> void:
@@ -122,7 +129,7 @@ func shoot_ball(body):
 	body.freeze = false
 	if close:
 		print("close")
-		body.apply_central_impulse((random_hoop_pos - global_position).normalized() * shoot_strength * 0.8)
+		body.apply_central_impulse((random_hoop_pos - global_position).normalized() * shoot_strength * 1.1)
 	elif abs(global_position.z - random_hoop_pos.z) > 140:
 		body.apply_central_impulse((random_hoop_pos - global_position).normalized() * shoot_strength * 1.7)
 		body.apply_impulse(global_basis.y * arc_strength * 2)

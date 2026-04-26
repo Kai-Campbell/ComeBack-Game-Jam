@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cv7nhohqyu10h" path="res://Scenes/ai.tscn" id="15_0bh4f"]
 [ext_resource type="Material" uid="uid://l7p4hchu12nf" path="res://Assets/Materials/Green.tres" id="16_setrc"]
 [ext_resource type="PackedScene" uid="uid://bdex3fejqtmfj" path="res://Scenes/basket_ball_ui.tscn" id="17_fjyny"]
+[ext_resource type="PackedScene" uid="uid://t7jm6h3ynw5h" path="res://Scenes/crowd.tscn" id="19_av135"]
 
 [sub_resource type="Environment" id="Environment_mxw5e"]
 ssr_enabled = true
@@ -641,6 +642,9 @@ points = PackedVector3Array(104.34332, 14.6495075, 83.12174, 104.34332, 14.17136
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rogsi"]
 points = PackedVector3Array(105.09575, 14.6495075, 84.13341, 105.09575, 14.171362, 84.13341, 105.478386, 14.6495075, 83.771576, 105.478386, 14.171362, 83.771576, 104.34333, 14.6495075, 83.12174, 104.34333, 14.171362, 83.12174, 104.80202, 14.6495075, 82.86216, 104.80202, 14.171362, 82.86216)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_58076"]
+size = Vector3(1, 0.16503906, 1)
+
 [node name="BasketBall" type="Node3D" unique_id=159027688]
 script = ExtResource("1_suf66")
 
@@ -654,7 +658,7 @@ light_energy = 0.1
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=935472511 instance=ExtResource("6_kroki")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 39.888317, -2.9903111, -135.47527)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 14.76046, -1.7379649, -91.9922)
 
 [node name="Lights" type="Node3D" parent="." unique_id=566152990]
 
@@ -1318,12 +1322,64 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.916466, 14.391712, 76.686
 [node name="BasketBall UI" parent="." unique_id=1280335478 instance=ExtResource("17_fjyny")]
 
 [node name="PassInSpot" type="Node3D" parent="." unique_id=2057693378]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.40942, 0, -149.01291)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.160934, 0, -105.67037)
 
 [node name="ThrowInGuy" parent="." unique_id=149854647 instance=ExtResource("15_0bh4f")]
 unique_name_in_owner = true
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 14.019353, -12.309967, -91.76096)
 script = null
+
+[node name="Area3D" type="Area3D" parent="ThrowInGuy" unique_id=46769119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4593414, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ThrowInGuy/Area3D" unique_id=911841645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41748047, 0)
+shape = SubResource("BoxShape3D_58076")
+
+[node name="Crowd" type="Node3D" parent="." unique_id=79976997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7805977, 0, 0)
+
+[node name="Crowd" parent="Crowd" unique_id=558957206 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -16.381216, 2.7782269, 0)
+
+[node name="Crowd2" parent="Crowd" unique_id=1516632713 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -16.381216, 2.7782269, -80.38935)
+
+[node name="Crowd3" parent="Crowd" unique_id=1948272071 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -16.381216, 2.7782269, -158.51534)
+
+[node name="Crowd4" parent="Crowd" unique_id=1901333319 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -26.819748, 18.301619, 22.301453)
+
+[node name="Crowd5" parent="Crowd" unique_id=1946928094 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -26.819748, 18.301619, -58.226456)
+
+[node name="Crowd6" parent="Crowd" unique_id=1112271348 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -26.819748, 18.301619, -140.71147)
+
+[node name="Crowd7" parent="Crowd" unique_id=1508262866 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -41.03795, 32.116013, -207.33)
+
+[node name="Crowd8" parent="Crowd" unique_id=1581851702 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -41.03795, 32.116013, -125.31584)
+
+[node name="Crowd9" parent="Crowd" unique_id=137181634 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -41.03795, 32.116013, -43.78598)
+
+[node name="Crowd10" parent="Crowd" unique_id=1781137190 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -41.03795, 32.116013, 36.54323)
+
+[node name="Crowd11" parent="Crowd" unique_id=1833321791 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -51.850193, 42.15754, 36.54323)
+
+[node name="Crowd12" parent="Crowd" unique_id=850374652 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -51.850193, 42.15754, -45.746964)
+
+[node name="Crowd13" parent="Crowd" unique_id=944347096 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -51.850193, 42.15754, -123.023544)
+
+[node name="Crowd14" parent="Crowd" unique_id=114675982 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -51.850193, 42.15754, -207.99823)
 
 [connection signal="body_entered" from="WorldGeo/HomeClose" to="." method="_on_home_close_body_entered"]
 [connection signal="body_exited" from="WorldGeo/HomeClose" to="." method="_on_home_close_body_exited"]
@@ -1333,3 +1389,4 @@ script = null
 [connection signal="body_entered" from="WorldGeo/AwayScored" to="." method="_on_away_scored_body_entered"]
 [connection signal="body_entered" from="WorldGeo/InsideArcAW" to="." method="_on_inside_arc_aw_body_entered"]
 [connection signal="body_exited" from="WorldGeo/InsideArcAW" to="." method="_on_inside_arc_aw_body_exited"]
+[connection signal="body_entered" from="ThrowInGuy/Area3D" to="." method="_on_area_3d_body_entered"]

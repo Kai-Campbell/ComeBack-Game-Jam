@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://cqunpemph2g3x"]
+
+[ext_resource type="Texture2D" uid="uid://2wgs852mdbfa" path="res://Assets/Images/RadioBall.png" id="1_xbjkg"]
+[ext_resource type="Script" uid="uid://bykpsq7v2cyn6" path="res://Scripts/main_meu.gd" id="1_xsqy4"]
+[ext_resource type="Texture2D" uid="uid://dsn6pugf00sg1" path="res://Assets/Images/Blurb.png" id="2_xsqy4"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_lybip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdkp3"]
+atlas = ExtResource("2_xsqy4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etrs4"]
+atlas = ExtResource("2_xsqy4")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujtmp"]
+atlas = ExtResource("2_xsqy4")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sljld"]
+atlas = ExtResource("2_xsqy4")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir23o"]
+atlas = ExtResource("2_xsqy4")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7v44"]
+atlas = ExtResource("2_xsqy4")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vd131"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdkp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etrs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujtmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sljld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir23o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7v44")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Main Meu" type="Control" unique_id=988290931]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xsqy4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=861978326]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1389079664]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_lybip")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1037160730]
+layout_mode = 0
+offset_left = -174.0
+offset_top = -61.0
+offset_right = 826.0
+offset_bottom = 689.0
+texture = ExtResource("1_xbjkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1276823025]
+position = Vector2(99, 105.99999)
+scale = Vector2(2.046875, 2.3281255)
+sprite_frames = SubResource("SpriteFrames_vd131")
+autoplay = "default"
+frame_progress = 0.30843174
+
+[node name="Label" type="Label" parent="." unique_id=1523049085]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 29.0
+offset_right = 1081.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 105
+text = "Clutch Ball"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1918479888]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 269.0
+offset_right = 922.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 40
+text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

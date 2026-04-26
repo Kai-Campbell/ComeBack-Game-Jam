@@ -11,7 +11,8 @@ var inside_arc = false
 @onready var camera_gimbal: Node3D = $"../CameraGimbal"
 
 func _ready():
-	pass
+	Global.scored_away.connect(no_touch)
+	Global.scored_home.connect(no_touch)
 
 func _physics_process(delta: float) -> void:
 	linear_velocity += get_gravity() * delta
@@ -44,8 +45,14 @@ func _physics_process(delta: float) -> void:
 	
 	if global_position.y <= -17:
 		touched = false
+	
+	if !touched and Global.time_up:
+		Global.in_play = false
 
-
+func no_touch(_num):
+	print("this is working")
+	await get_tree().create_timer(2).timeout
+	touched = false
 
 	'''
 	if Input.is_action_pressed("forward"):

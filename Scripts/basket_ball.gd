@@ -81,3 +81,13 @@ func _on_inside_arc_aw_body_entered(body: Node3D) -> void:
 func _on_inside_arc_aw_body_exited(body: Node3D) -> void:
 	if body.is_in_group("AwayTeam"):
 		body.in_arc = false
+
+'throw in guy'
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.owner.is_in_group("Player"):
+		body.freeze = true
+		await get_tree().create_timer(1).timeout
+		body.freeze = false
+		body.apply_impulse(($PassInSpot.position - %ThrowInGuy.position).normalized() * 30) 
+		await get_tree().create_timer(2).timeout
+		%ThrowInGuy.visible = false

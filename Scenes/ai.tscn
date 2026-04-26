@@ -16,7 +16,7 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_ayk67")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xv65i"]
-size = Vector3(3.6835938, 1.3383789, 4.292755)
+size = Vector3(4.8116455, 1.7971191, 5.570137)
 
 [node name="AI" type="CharacterBody3D" unique_id=1945539367]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0)
@@ -53,12 +53,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7339684, 0)
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Feet" unique_id=1982450530]
 path_desired_distance = 6.0
 target_desired_distance = 6.0
-debug_enabled = true
+avoidance_enabled = true
+radius = 2.0
 
 [node name="BallDetection" type="Area3D" parent="." unique_id=1920468482]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BallDetection" unique_id=960978699]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009765549, -0.16918953, 0.15565461)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027770929, 0.060180597, 0.077930145)
 shape = SubResource("BoxShape3D_xv65i")
 
 [connection signal="body_entered" from="ShootBox" to="." method="_on_shoot_box_body_entered"]

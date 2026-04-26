@@ -45,6 +45,7 @@ func increase_home(points : int):
 
 func update_score_home():
 	home.text = str(homescore)
+	Global.home_score = homescore
 
 func increase_away(points : int):
 	awayscore += points
@@ -52,10 +53,12 @@ func increase_away(points : int):
 
 func update_score_away():
 	away.text = str(awayscore)
+	Global.away_score = awayscore
 
 
 func _on_timer_timeout() -> void:
 	time.set("theme_override_colors/font_color", Color("red"))
 	time_milli.set("theme_override_colors/font_color", Color("red"))
 	time_done = true
+	Global.time_up = true
 	

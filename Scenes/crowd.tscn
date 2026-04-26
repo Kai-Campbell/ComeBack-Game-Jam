@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://t7jm6h3ynw5h"]
+
+[ext_resource type="Texture2D" uid="uid://b3nqymnvp7hqm" path="res://Assets/Images/CrowdJump.png" id="1_it0bg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufwdi"]
+atlas = ExtResource("1_it0bg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds8sv"]
+atlas = ExtResource("1_it0bg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urbdt"]
+atlas = ExtResource("1_it0bg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uogji"]
+atlas = ExtResource("1_it0bg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slccr"]
+atlas = ExtResource("1_it0bg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70h2g"]
+atlas = ExtResource("1_it0bg")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pibh4"]
+atlas = ExtResource("1_it0bg")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntsk5"]
+atlas = ExtResource("1_it0bg")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rwrux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufwdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds8sv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urbdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uogji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slccr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70h2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pibh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntsk5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Crowd" type="Node3D" unique_id=558957206]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="AnimatedSprite3D4" type="AnimatedSprite3D" parent="." unique_id=1821143553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55448085, 0, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_rwrux")
+autoplay = "default"
+frame_progress = 0.34964797
+speed_scale = 2.0
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=232424195]
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_rwrux")
+autoplay = "default"
+frame_progress = 0.46045133
+speed_scale = 2.0
+
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="." unique_id=689933540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2864874, 0, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_rwrux")
+autoplay = "default"
+frame_progress = 0.09623332
+speed_scale = 2.0
+
+[node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="." unique_id=1334741709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28285906, 0, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_rwrux")
+autoplay = "default"
+frame_progress = 0.69201916
+speed_scale = 2.0
+
+[node name="AnimatedSprite3D5" type="AnimatedSprite3D" parent="." unique_id=1453649242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5753482, 0, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_rwrux")
+autoplay = "default"
+frame_progress = 0.53454524
+speed_scale = 2.0
+
+[node name="AnimatedSprite3D6" type="AnimatedSprite3D" parent="." unique_id=278443151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81092113, 0, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_rwrux")
+autoplay = "default"
+frame_progress = 0.5067674
+speed_scale = 2.0
+
+[node name="AnimatedSprite3D7" type="AnimatedSprite3D" parent="." unique_id=2128977064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85060227, 0, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_rwrux")
+autoplay = "default"
+frame_progress = 0.99287516
+speed_scale = 2.0
