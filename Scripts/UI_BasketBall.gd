@@ -1,5 +1,7 @@
 extends Control
 @onready var time: Label = $Time
+@onready var time_milli: Label = $TimeMilli
+
 @onready var timer: Timer = $Timer
 @onready var home: Label = $Home
 @onready var away: Label = $Away
@@ -21,22 +23,20 @@ func _ready() -> void:
 
 
 func time_left_buzzer():
-	var mils = 1000 - fmod(timedelta, 1) * 1000
 	var secs = 10 - fmod(timedelta, 60)
-	
-	return  [secs, mils]
-	'''
-	var time_left = timer.time_left
-	var seconds = int(time_left) % 60
-	var milli = time_left / 100
-	return [seconds, milli]
-	'''
+	return secs
+
+func time_left_milli():
+	var mils = 1000 - fmod(timedelta, 1) * 1000
+	return mils
 
 func _process(delta: float) -> void:
 	timedelta += delta
-	time.text = "%02d:%02d" % time_left_buzzer()
+	time.text = "%02d" % time_left_buzzer()
+	time_milli.text = "%03d" % time_left_milli()
 	if time_done == true:
-		time.text = "00:00"
+		time.text = "00"
+		time_milli.text = "000"
 	
 
 func increase_home(points : int):
@@ -56,5 +56,6 @@ func update_score_away():
 
 func _on_timer_timeout() -> void:
 	time.set("theme_override_colors/font_color", Color("red"))
+	time_milli.set("theme_override_colors/font_color", Color("red"))
 	time_done = true
 	

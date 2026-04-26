@@ -22,8 +22,6 @@ home = true
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1945539367]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0)
 
-[node name="NavigationLink3D" type="NavigationLink3D" parent="CharacterBody3D" unique_id=456265313]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1970407680]
 shape = SubResource("CapsuleShape3D_j4706")
 
@@ -33,11 +31,11 @@ billboard = 2
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1986537531]
 mesh = SubResource("CapsuleMesh_j4706")
 
-[node name="Area3D" type="Area3D" parent="CharacterBody3D" unique_id=1887281292]
+[node name="ShootBox" type="Area3D" parent="CharacterBody3D" unique_id=1887281292]
 collision_layer = 5
 collision_mask = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Area3D" unique_id=1643793996]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/ShootBox" unique_id=1643793996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00828743, 0, 0.011978116)
 shape = SubResource("BoxShape3D_ayk67")
 debug_color = Color(0.97241205, 0, 0.44452727, 0.41960785)
@@ -46,7 +44,12 @@ debug_color = Color(0.97241205, 0, 0.44452727, 0.41960785)
 transform = Transform3D(1.018, 0, 0, 0, 0.443, 0, 0, 0, 1.01, 0, 0, 0)
 mesh = SubResource("CylinderMesh_xv65i")
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D" unique_id=1982450530]
+avoidance_enabled = true
+debug_enabled = true
+
 [node name="Head" type="Node3D" parent="." unique_id=1794167698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.297402, 0)
 
-[connection signal="body_entered" from="CharacterBody3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="CharacterBody3D/ShootBox" to="." method="_on_area_3d_body_entered"]
+[connection signal="target_reached" from="CharacterBody3D/NavigationAgent3D" to="CharacterBody3D" method="_on_navigation_agent_3d_target_reached"]
