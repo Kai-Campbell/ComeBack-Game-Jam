@@ -98,4 +98,4 @@ billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_8erm5")
 autoplay = "default"
-frame_progress = 0.24106652
+frame_progress = 0.37542805

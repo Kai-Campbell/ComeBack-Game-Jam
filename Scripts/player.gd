@@ -5,6 +5,8 @@ extends RigidBody3D
 @export var friction = 1.1
 @export var air_movement_speed = 50
 @export var gravity = 0.4
+var touched = false
+var inside_arc = false
 
 @onready var camera_gimbal: Node3D = $"../CameraGimbal"
 
@@ -38,8 +40,10 @@ func _physics_process(delta: float) -> void:
 		
 		linear_velocity = linear_velocity.move_toward(move_direction * air_movement_speed, 20 * delta)
 		linear_velocity.y -= gravity  #this is hard coded gravity I know it sucks it's just the best thing I could find
-		
-
+	
+	
+	if global_position.y <= -17:
+		touched = false
 
 
 
