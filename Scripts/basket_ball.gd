@@ -8,11 +8,13 @@ var inside_arc = false
 var can_score = true
 
 func _ready() -> void:
+	Global.in_play = false
 	player_mat.set_surface_override_material(0, basketball)
 	Global.away_basket = $AwayBasket.position
 	Global.home_basket = $HomeBasket.position
 	Global.pass_in_spot = $PassInSpot.position
 	Global.point.connect(set_inside)
+	get_tree().paused = false
 
 
 func _process(_delta: float) -> void:
@@ -26,8 +28,16 @@ func end_game(): #this method doesn't work rn
 	if !Global.in_play and Global.time_up:
 		if (Global.home_score > Global.away_score and Global.team_to_win == "red") or (Global.away_score > Global.home_score and Global.team_to_win == "green"):
 			print("you win")
+			await get_tree().create_timer(1).timeout
+			get_tree().paused = true # this stops the game after a bucket
+			get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
 		else:
 			print("you lose")
+			await get_tree().create_timer(1).timeout
+			get_tree().paused = true
+			get_tree().change_scene_to_file("res://Scenes/lose_screen.tscn")
+			
+			
 
 func _on_home_close_body_entered(body: Node3D) -> void:
 	if body.is_in_group("HomeTeam"):

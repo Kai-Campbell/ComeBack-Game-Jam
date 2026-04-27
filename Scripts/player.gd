@@ -22,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		angular_velocity.x = direction.z * moving_force * delta
 		angular_velocity.z = -direction.x * moving_force * delta
+		angular_velocity.y -= gravity
 	else:
 		angular_velocity /= friction
 		#angular_velocity.x = move_toward(direction.z, 0, moving_force * delta)
@@ -50,8 +51,6 @@ func _physics_process(delta: float) -> void:
 		Global.in_play = false
 
 func no_touch(_num):
-	print("this is working")
-	await get_tree().create_timer(2).timeout
 	touched = false
 
 	'''

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cm2qvkh4p8a4s" path="res://Scripts/goal_screen.gd" id="1_xce8x"]
 
 [node name="GoalScreen" type="Control" unique_id=909334417]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,13 +44,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = 274.0
+offset_top = -146.0
+offset_right = 513.0
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 2
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_font_sizes/font_size = 56
+
+[node name="Label" type="Label" parent="." unique_id=1966847109]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 200.0
+offset_right = 879.0
+offset_bottom = 296.0
+theme_override_font_sizes/font_size = 70
+text = "I've got good money on"
+
+[node name="Label2" type="Label" parent="." unique_id=72722864]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -545.0
+offset_top = 288.0
+offset_right = 513.0
+offset_bottom = 398.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+text = "make sure they win tonight"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

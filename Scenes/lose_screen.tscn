@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dy7ob5jsncim5"]
+
+[ext_resource type="Script" uid="uid://dqxgu8he70mrn" path="res://Scripts/lose_screen.gd" id="1_s2rrh"]
+
+[node name="Lose Screen" type="Control" unique_id=947242274]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2rrh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=194454520]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4990462, 0.4990462, 0.49904615, 1)
+
+[node name="Label" type="Label" parent="." unique_id=416967048]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -557.5
+offset_top = 171.0
+offset_right = 557.5
+offset_bottom = 330.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 57
+text = "You idiot! You let the wrong team win!
+You better make this up to me next time"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=54159339]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = 146.0
+offset_right = 165.5
+offset_bottom = 206.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 182
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=965649076]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Retry
+"
+
+[node name="Menu" type="Button" parent="HBoxContainer" unique_id=555930109]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Menu
+"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Menu" to="." method="_on_menu_pressed"]

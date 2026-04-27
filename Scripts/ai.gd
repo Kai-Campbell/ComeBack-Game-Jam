@@ -16,6 +16,7 @@ var reset_timer = 0.0
 var shoot_strength = 25
 var arc_strength = 5
 var move_speed = 20
+var run_speed = 30
 var close = false
 var in_arc = false
 var has_ball = false
@@ -36,6 +37,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	await get_tree().create_timer(1.2).timeout
 	velocity += get_gravity() * delta
 	
 	match state:
@@ -86,7 +88,7 @@ func run():
 	navigation_agent_3d.target_position = ball.global_position
 	var next_pos = navigation_agent_3d.get_next_path_position()
 	var direction = (next_pos - current_pos).normalized()
-	velocity = direction * move_speed
+	velocity = direction * run_speed
 
 func _on_navigation_agent_3d_target_reached() -> void:
 	if ball_close:
@@ -116,6 +118,7 @@ func shoot_ball(body):
 	state = STATE.Idle
 	has_ball = true
 	body.touched = true
+	Global.in_play = true
 	var random_hoop_pos
 	var rand_x = randi_range(-25, 25)
 	var rand_y = randi_range(30, 40)

@@ -21,6 +21,11 @@ boot_splash/minimum_display_time=2000
 
 Global="*uid://mtvf34ea4xwc"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/func_godot/plugin.cfg")

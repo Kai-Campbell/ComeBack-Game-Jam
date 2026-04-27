@@ -12,6 +12,7 @@ var homescore = 0
 var awayscore = 0
 
 func _ready() -> void:
+	Global.time_up = false
 	homescore += randi_range(50, 115)
 	awayscore = homescore + randi_range(-2, 2)
 	timer.start()
@@ -19,6 +20,7 @@ func _ready() -> void:
 	Global.scored_away.connect(increase_away)
 	update_score_away()
 	update_score_home()
+	time.text = "10"
 
 
 
@@ -31,6 +33,7 @@ func time_left_milli():
 	return mils
 
 func _process(delta: float) -> void:
+	await get_tree().create_timer(1.2).timeout
 	timedelta += delta
 	time.text = "%02d" % time_left_buzzer()
 	time_milli.text = "%03d" % time_left_milli()
