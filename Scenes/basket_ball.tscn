@@ -20,6 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://bdex3fejqtmfj" path="res://Scenes/basket_ball_ui.tscn" id="17_fjyny"]
 [ext_resource type="PackedScene" uid="uid://t7jm6h3ynw5h" path="res://Scenes/crowd.tscn" id="19_av135"]
 [ext_resource type="AudioStream" uid="uid://b6uxbmpf54bhv" path="res://Assets/SFX/BackgroundBBall.mp3" id="20_31v4v"]
+[ext_resource type="PackedScene" uid="uid://cpo886rpps45k" path="res://Scenes/boy.tscn" id="21_ms55b"]
+[ext_resource type="PackedScene" uid="uid://fwmnad6x8sbr" path="res://Scenes/scary_guy.tscn" id="22_bed2t"]
+[ext_resource type="AudioStream" uid="uid://lxc1iru5ejw" path="res://Assets/SFX/CrowdBasketMade.mp3" id="23_88bb8"]
 
 [sub_resource type="Environment" id="Environment_mxw5e"]
 ssr_enabled = true
@@ -1324,6 +1327,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.916466, 14.391712, 76.686
 
 [node name="BasketBall UI" parent="." unique_id=1280335478 instance=ExtResource("17_fjyny")]
 
+[node name="PassInSpotAway" type="Node3D" parent="." unique_id=1267102558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.40993, 0, -33.50258)
+
 [node name="PassInSpot" type="Node3D" parent="." unique_id=2057693378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.160934, 0, -105.67037)
 
@@ -1413,6 +1419,127 @@ stream = ExtResource("20_31v4v")
 volume_db = 4.0
 autoplay = true
 max_distance = 1031.59
+
+[node name="Boy" parent="." unique_id=1174609683 instance=ExtResource("21_ms55b")]
+transform = Transform3D(35, 0, 0, 0, 35, 0, 0, 0, 35, -16.108341, 2.708292, -216.02037)
+
+[node name="Scary Guy" parent="." unique_id=39969237 instance=ExtResource("22_bed2t")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, -17.713709, 3.4468412, -204.40533)
+
+[node name="Inbound Time" type="Timer" parent="." unique_id=1544281641]
+process_mode = 3
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Crowd2" type="Node3D" parent="." unique_id=2035668075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.269135, 49.45228, 0)
+
+[node name="Crowd" parent="Crowd2" unique_id=538645959 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -16.381216, 2.7782269, 0)
+
+[node name="Crowd2" parent="Crowd2" unique_id=766648056 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -16.381216, 2.7782269, -80.38935)
+
+[node name="Crowd3" parent="Crowd2" unique_id=1774401760 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -16.381216, 2.7782269, -158.51534)
+
+[node name="Crowd4" parent="Crowd2" unique_id=1900633318 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -26.819748, 18.301619, 22.301453)
+
+[node name="Crowd5" parent="Crowd2" unique_id=1664704669 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -26.819748, 18.301619, -58.226456)
+
+[node name="Crowd6" parent="Crowd2" unique_id=1179766853 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -26.819748, 18.301619, -140.71147)
+
+[node name="Crowd7" parent="Crowd2" unique_id=200279981 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -41.03795, 32.116013, -207.33)
+
+[node name="Crowd8" parent="Crowd2" unique_id=1679198581 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -41.03795, 32.116013, -125.31584)
+
+[node name="Crowd9" parent="Crowd2" unique_id=1410100405 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -41.03795, 32.116013, -43.78598)
+
+[node name="Crowd10" parent="Crowd2" unique_id=1304164575 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -41.03795, 32.116013, 36.54323)
+
+[node name="Crowd11" parent="Crowd2" unique_id=957803395 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -51.850193, 42.15754, 36.54323)
+
+[node name="Crowd12" parent="Crowd2" unique_id=217231784 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -51.850193, 42.15754, -45.746964)
+
+[node name="Crowd13" parent="Crowd2" unique_id=365155359 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -51.850193, 42.15754, -123.023544)
+
+[node name="Crowd14" parent="Crowd2" unique_id=1679167220 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -51.850193, 42.15754, -207.99823)
+
+[node name="Crowd3" type="Node3D" parent="." unique_id=75407691]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 147.01031, 33.03251, 181.11946)
+
+[node name="Crowd" parent="Crowd3" unique_id=1702733550 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -16.381216, 2.7782269, 0)
+
+[node name="Crowd2" parent="Crowd3" unique_id=390150699 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -16.381216, 2.7782269, -80.38935)
+
+[node name="Crowd3" parent="Crowd3" unique_id=1835028616 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -16.381216, 2.7782269, -158.51534)
+
+[node name="Crowd4" parent="Crowd3" unique_id=1099008595 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -26.819748, 18.301619, 22.301453)
+
+[node name="Crowd5" parent="Crowd3" unique_id=2038942713 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -26.819748, 18.301619, -58.226456)
+
+[node name="Crowd6" parent="Crowd3" unique_id=66162355 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -26.819748, 18.301619, -140.71147)
+
+[node name="Crowd7" parent="Crowd3" unique_id=559916615 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -41.03795, 32.116013, -125.46)
+
+[node name="Crowd9" parent="Crowd3" unique_id=556469088 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -41.03795, 32.116013, -43.78598)
+
+[node name="Crowd10" parent="Crowd3" unique_id=423616096 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -41.03795, 32.116013, 36.54323)
+
+[node name="Crowd11" parent="Crowd3" unique_id=660598897 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -51.850193, 42.15754, 36.54323)
+
+[node name="Crowd12" parent="Crowd3" unique_id=660435654 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -51.850193, 42.15754, -45.746964)
+
+[node name="Crowd13" parent="Crowd3" unique_id=647718429 instance=ExtResource("19_av135")]
+transform = Transform3D(-1.7484556e-06, 0, 40, 0, 40, 0, -40, 0, -1.7484556e-06, -51.48372, 42.15754, -123.02354)
+
+[node name="Crowd14" parent="Crowd3" unique_id=638707099 instance=ExtResource("19_av135")]
+transform = Transform3D(35.640263, 0, 18.15962, 0, 40, 0, -18.15962, 0, 35.640263, -11.968552, 42.15754, -173.85138)
+
+[node name="CrowdCheers" type="Node3D" parent="." unique_id=1075428987]
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="CrowdCheers" unique_id=1617553169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.851074, 0, -183.32758)
+stream = ExtResource("23_88bb8")
+volume_db = 3.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CrowdCheers" unique_id=79389126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.35927, 0, -179.93222)
+stream = ExtResource("23_88bb8")
+volume_db = 3.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="CrowdCheers" unique_id=124767316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.35927, 0, -1.0796814)
+stream = ExtResource("23_88bb8")
+volume_db = 3.0
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="CrowdCheers" unique_id=177454806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 229.65233, 0, -179.93222)
+stream = ExtResource("23_88bb8")
+volume_db = 3.0
 
 [connection signal="body_entered" from="WorldGeo/HomeClose" to="." method="_on_home_close_body_entered"]
 [connection signal="body_exited" from="WorldGeo/HomeClose" to="." method="_on_home_close_body_exited"]

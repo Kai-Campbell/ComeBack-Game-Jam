@@ -15,8 +15,8 @@ var reset_timer = 0.0
 'BasketBall Variables'
 var shoot_strength = 25
 var arc_strength = 5
-var move_speed = 20
-var run_speed = 30
+var move_speed = 40
+var run_speed = 50
 var close = false
 var in_arc = false
 var has_ball = false
@@ -37,7 +37,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(2).timeout
 	velocity += get_gravity() * delta
 	
 	match state:

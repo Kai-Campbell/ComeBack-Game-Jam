@@ -3,6 +3,7 @@ extends Node
 var away_basket
 var home_basket
 var pass_in_spot
+var pass_in_spot_away
 
 signal point(value)
 signal scored_home

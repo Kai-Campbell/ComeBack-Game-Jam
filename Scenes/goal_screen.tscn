@@ -1,6 +1,52 @@
 [gd_scene format=3 uid="uid://cvp77kj7584c"]
 
 [ext_resource type="Script" uid="uid://cm2qvkh4p8a4s" path="res://Scripts/goal_screen.gd" id="1_xce8x"]
+[ext_resource type="Texture2D" uid="uid://cbv74qs568k1g" path="res://Assets/Images/backing.png" id="2_33phc"]
+[ext_resource type="Texture2D" uid="uid://bjf6xid8u01pm" path="res://Assets/Images/Scary Guy.png" id="3_caq88"]
+[ext_resource type="Texture2D" uid="uid://lwjxcmct6ee0" path="res://Assets/Images/Boy.png" id="4_yka04"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wji05"]
+atlas = ExtResource("4_yka04")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjqxt"]
+atlas = ExtResource("4_yka04")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3s8k"]
+atlas = ExtResource("4_yka04")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8xaj"]
+atlas = ExtResource("4_yka04")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8g5x"]
+atlas = ExtResource("4_yka04")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0apwo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wji05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjqxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3s8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8xaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8g5x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="GoalScreen" type="Control" unique_id=909334417]
 process_mode = 3
@@ -11,6 +57,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xce8x")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1987588298]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_33phc")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1805895701]
 layout_mode = 1
@@ -37,41 +89,59 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 73
 text = "Start"
 
-[node name="WinText" type="Label" parent="." unique_id=2134172056]
-layout_mode = 1
+[node name="textboxes" type="Node2D" parent="." unique_id=237209288]
+position = Vector2(760.57, 249.87)
+scale = Vector2(0.405, 0.405)
+
+[node name="WinText" type="Label" parent="textboxes" unique_id=2134172056]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 274.0
-offset_top = -146.0
-offset_right = 513.0
-offset_bottom = -36.0
+offset_left = 314.02002
+offset_top = -92.215
+offset_right = 553.02
+offset_bottom = 17.785004
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
 
-[node name="Label" type="Label" parent="." unique_id=1966847109]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 200.0
-offset_right = 879.0
-offset_bottom = 296.0
+[node name="Label" type="Label" parent="textboxes" unique_id=1966847109]
+offset_left = -504.97998
+offset_top = -106.215
+offset_right = 279.02002
+offset_bottom = -10.214996
 theme_override_font_sizes/font_size = 70
 text = "I've got good money on"
 
-[node name="Label2" type="Label" parent="." unique_id=72722864]
-layout_mode = 1
+[node name="Label2" type="Label" parent="textboxes" unique_id=72722864]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -545.0
-offset_top = 288.0
-offset_right = 513.0
-offset_bottom = 398.0
+offset_left = -504.97998
+offset_top = -18.214996
+offset_right = 553.02
+offset_bottom = 91.785
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 80
 text = "make sure they win tonight"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1780339972]
+texture_filter = 1
+layout_mode = 0
+offset_left = 401.0
+offset_top = 259.0
+offset_right = 559.0
+offset_bottom = 405.0
+texture = ExtResource("3_caq88")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1465766340]
+texture_filter = 1
+position = Vector2(713, 455)
+scale = Vector2(4.84375, 4.3125)
+sprite_frames = SubResource("SpriteFrames_0apwo")
+autoplay = "default"
+frame_progress = 0.15820614
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

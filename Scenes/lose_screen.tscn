@@ -54,7 +54,7 @@ theme_override_constants/separation = 182
 [node name="Button" type="Button" parent="HBoxContainer" unique_id=965649076]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "Retry
+text = "Next Game
 "
 
 [node name="Menu" type="Button" parent="HBoxContainer" unique_id=555930109]

@@ -20,6 +20,7 @@ boot_splash/minimum_display_time=2000
 [autoload]
 
 Global="*uid://mtvf34ea4xwc"
+MainMusic="*uid://cg1wavs3hy48h"
 
 [display]
 

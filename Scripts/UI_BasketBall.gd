@@ -1,6 +1,7 @@
 extends Control
 @onready var time: Label = $Time
 @onready var time_milli: Label = $TimeMilli
+@onready var team: Label = $Team
 
 @onready var timer: Timer = $Timer
 @onready var home: Label = $Home
@@ -21,6 +22,12 @@ func _ready() -> void:
 	update_score_away()
 	update_score_home()
 	time.text = "10"
+	if Global.team_to_win == "red":
+		team.text = "RED"
+		team.set("theme_override_colors/font_color", Color("red"))
+	else:
+		team.text = "GREEN"
+		team.set("theme_override_colors/font_color", Color("green"))
 
 
 
@@ -33,13 +40,18 @@ func time_left_milli():
 	return mils
 
 func _process(delta: float) -> void:
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(2.1).timeout
 	timedelta += delta
 	time.text = "%02d" % time_left_buzzer()
 	time_milli.text = "%03d" % time_left_milli()
 	if time_done == true:
 		time.text = "00"
 		time_milli.text = "000"
+	
+	''' stop time ?
+	if Global.in_play == false and Global.time_up != false:
+		timedelta = timedelta
+	'''
 	
 
 func increase_home(points : int):

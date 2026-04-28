@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://fwmnad6x8sbr"]
+
+[ext_resource type="Texture2D" uid="uid://bjf6xid8u01pm" path="res://Assets/Images/Scary Guy.png" id="1_5ion7"]
+
+[node name="Scary Guy" type="Node3D" unique_id=39969237]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1409082244]
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_5ion7")

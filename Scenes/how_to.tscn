@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://b4v8pwfaqyxej"]
 
 [ext_resource type="VideoStream" uid="uid://cpcfi08f1hejl" path="res://Assets/Video/demo.ogv" id="1_8nhqh"]
+[ext_resource type="Script" uid="uid://cdh2sh4c6f4ro" path="res://Scripts/how_to.gd" id="1_kjlya"]
 
 [node name="How TO" type="Control" unique_id=1811915658]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kjlya")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1377759044]
 layout_mode = 1
@@ -19,14 +22,33 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5306541, 0.53065413, 0.5306541, 1)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=114518938]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -332.0
-offset_top = 105.0
-offset_right = 1588.0
-offset_bottom = 1185.0
-grow_horizontal = 2
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1895953889]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 87.395
+offset_right = 2060.0012
+offset_bottom = 1167.395
+scale = Vector2(0.3, 0.3)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=114518938]
+layout_mode = 2
 stream = ExtResource("1_8nhqh")
+autoplay = true
+
+[node name="Button" type="Button" parent="." unique_id=221930205]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -151.0
+offset_right = 50.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

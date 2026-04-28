@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cpo886rpps45k"]
+
+[ext_resource type="Texture2D" uid="uid://lwjxcmct6ee0" path="res://Assets/Images/Boy.png" id="1_7dqp0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhh7w"]
+atlas = ExtResource("1_7dqp0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82mfi"]
+atlas = ExtResource("1_7dqp0")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olg5v"]
+atlas = ExtResource("1_7dqp0")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sglr"]
+atlas = ExtResource("1_7dqp0")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bije5"]
+atlas = ExtResource("1_7dqp0")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jro2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhh7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82mfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olg5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sglr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bije5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Boy" type="Node3D" unique_id=1174609683]
+transform = Transform3D(9.065, 0, 0, 0, 9.065, 0, 0, 0, 9.065, 0, 0, 0)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=316038595]
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_jro2t")
+autoplay = "default"
+frame_progress = 0.837656
+speed_scale = 2.0

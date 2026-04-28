@@ -1,8 +1,10 @@
 extends Control
-@onready var win_text: Label = $WinText
+@onready var win_text: Label = $textboxes/WinText
 
 
 func _ready() -> void:
+	if MainMusic.is_on() == false:
+		MainMusic._play_music()
 	var rand = randi_range(1, 2)
 	if rand == 1:
 		win_text.text = "RED"

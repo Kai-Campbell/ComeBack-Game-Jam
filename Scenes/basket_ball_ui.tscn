@@ -85,4 +85,31 @@ vertical_alignment = 1
 wait_time = 11.2
 one_shot = true
 
+[node name="GoalTeam" type="Label" parent="." unique_id=361208275]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 93.0
+offset_right = 204.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Goal:           team should win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Team" type="Label" parent="." unique_id=923248122]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 98.0
+offset_right = -51.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
