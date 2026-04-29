@@ -2,6 +2,9 @@
 
 [ext_resource type="VideoStream" uid="uid://cpcfi08f1hejl" path="res://Assets/Video/demo.ogv" id="1_8nhqh"]
 [ext_resource type="Script" uid="uid://cdh2sh4c6f4ro" path="res://Scripts/how_to.gd" id="1_kjlya"]
+[ext_resource type="Texture2D" uid="uid://4j7uucmmldsm" path="res://Assets/Images/wasd.png" id="3_j0hud"]
+[ext_resource type="Texture2D" uid="uid://8k8qn55pqbf5" path="res://Assets/Images/space.png" id="4_p3yrl"]
+[ext_resource type="AudioStream" uid="uid://cjg0yxcxnqes2" path="res://Assets/Music/HowToSong.mp3" id="5_p3yrl"]
 
 [node name="How TO" type="Control" unique_id=1811915658]
 process_mode = 3
@@ -24,9 +27,9 @@ color = Color(0.5306541, 0.53065413, 0.5306541, 1)
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1895953889]
 layout_mode = 0
-offset_left = 140.0
+offset_left = 61.19
 offset_top = 87.395
-offset_right = 2060.0012
+offset_right = 1981.1904
 offset_bottom = 1167.395
 scale = Vector2(0.3, 0.3)
 
@@ -50,5 +53,53 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Back"
+
+[node name="Label" type="Label" parent="." unique_id=2023911822]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 110.0
+offset_right = 1126.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 40
+text = "Move
+
+Jump"
+
+[node name="Label2" type="Label" parent="." unique_id=240784449]
+layout_mode = 0
+offset_left = 669.0
+offset_top = 325.0
+offset_right = 1235.0
+offset_bottom = 547.0
+theme_override_font_sizes/font_size = 30
+text = "Help the team the boss bet on to win
+the game using your remote controlled
+basketball you snuck onto the court.
+Red team will have possesion in the
+final seconds."
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2101417086]
+layout_mode = 0
+offset_left = 713.39
+offset_top = 54.0
+offset_right = 1713.3903
+offset_bottom = 804.0
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("3_j0hud")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=683205787]
+layout_mode = 0
+offset_left = 733.08
+offset_top = 125.0
+offset_right = 1433.0801
+offset_bottom = 825.0
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_p3yrl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2039769219]
+stream = ExtResource("5_p3yrl")
+volume_db = 4.0
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

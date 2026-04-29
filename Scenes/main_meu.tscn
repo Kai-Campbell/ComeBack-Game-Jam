@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bykpsq7v2cyn6" path="res://Scripts/main_meu.gd" id="1_xsqy4"]
 [ext_resource type="Texture2D" uid="uid://dsn6pugf00sg1" path="res://Assets/Images/Blurb.png" id="2_xsqy4"]
 [ext_resource type="FontFile" uid="uid://dq6yrx1vlo1s7" path="res://Assets/texts/Dream MMA.ttf" id="4_lybip"]
+[ext_resource type="AudioStream" uid="uid://byp5boq486c4x" path="res://Assets/Music/ShoveThisInaGameJamGame.mp3" id="5_vdkp3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vdkp3"]
 atlas = ExtResource("2_xsqy4")
@@ -137,6 +138,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Quit
 "
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=462859319]
+stream = ExtResource("5_vdkp3")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

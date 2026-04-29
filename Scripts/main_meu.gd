@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	MainMusic._play_music()
+	pass
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/goal_screen.tscn")

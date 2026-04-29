@@ -9,7 +9,6 @@ var inside_arc = false
 var can_score = true
 
 func _ready() -> void:
-	MainMusic._stop_music()
 	Global.in_play = false
 	player_mat.set_surface_override_material(0, basketball)
 	Global.away_basket = $AwayBasket.position
@@ -19,6 +18,9 @@ func _ready() -> void:
 	Global.point.connect(set_inside)
 	Global.scored_home.connect(cheer)
 	Global.scored_away.connect(cheer)
+	Global.scored_home.connect(swish2)
+	Global.scored_away.connect(swish)
+	Global.game_done.connect(buzzer)
 	get_tree().paused = false
 
 
@@ -29,16 +31,18 @@ func set_inside(yesorno):
 	inside_arc = yesorno
 
 
-func end_game(): #MAKE SURE TO HAVE A CHECK IF EQUAL
+func end_game():
 	if !Global.in_play and Global.time_up:
 		if (Global.home_score > Global.away_score and Global.team_to_win == "red") or (Global.away_score > Global.home_score and Global.team_to_win == "green"):
-			print("you win")
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(4).timeout
 			get_tree().paused = true # this stops the game after a bucket
 			get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
+		elif Global.home_score == Global.away_score:
+			await get_tree().create_timer(4).timeout
+			get_tree().paused = true
+			get_tree().change_scene_to_file("res://Scenes/lose_screen.tscn")
 		else:
-			print("you lose")
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(4).timeout
 			get_tree().paused = true
 			get_tree().change_scene_to_file("res://Scenes/lose_screen.tscn")
 			
@@ -110,4 +114,14 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func cheer(_num):
 	for i in $CrowdCheers.get_children():
 		i.play()
-	
+
+func swish(_num):
+	$Sounds/SwishA.play()
+
+func swish2(_num):
+	$Sounds/SwishH.play()
+
+func buzzer():
+	$Sounds/Buzzer1.play()
+	$Sounds/Buzzer3.play()
+	$Sounds/Buzzer2.play()

@@ -76,4 +76,5 @@ func _on_timer_timeout() -> void:
 	time_milli.set("theme_override_colors/font_color", Color("red"))
 	time_done = true
 	Global.time_up = true
+	Global.game_done.emit()
 	

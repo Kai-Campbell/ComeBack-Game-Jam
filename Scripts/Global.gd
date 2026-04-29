@@ -5,6 +5,7 @@ var home_basket
 var pass_in_spot
 var pass_in_spot_away
 
+signal game_done
 signal point(value)
 signal scored_home
 signal scored_away

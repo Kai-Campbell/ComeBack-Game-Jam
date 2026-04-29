@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cbv74qs568k1g" path="res://Assets/Images/backing.png" id="2_33phc"]
 [ext_resource type="Texture2D" uid="uid://bjf6xid8u01pm" path="res://Assets/Images/Scary Guy.png" id="3_caq88"]
 [ext_resource type="Texture2D" uid="uid://lwjxcmct6ee0" path="res://Assets/Images/Boy.png" id="4_yka04"]
+[ext_resource type="AudioStream" uid="uid://cu1fdhiqadyg8" path="res://Assets/Music/OutsideStadium.mp3" id="5_caq88"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wji05"]
 atlas = ExtResource("4_yka04")
@@ -143,5 +144,9 @@ scale = Vector2(4.84375, 4.3125)
 sprite_frames = SubResource("SpriteFrames_0apwo")
 autoplay = "default"
 frame_progress = 0.15820614
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=9725193]
+stream = ExtResource("5_caq88")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
