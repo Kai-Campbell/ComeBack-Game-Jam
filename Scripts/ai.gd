@@ -16,7 +16,7 @@ var reset_timer = 0.0
 var shoot_strength = 25
 var arc_strength = 5
 var move_speed = 40
-var run_speed = 50
+var run_speed = 60
 var close = false
 var in_arc = false
 var has_ball = false
@@ -90,6 +90,13 @@ func run():
 	var direction = (next_pos - current_pos).normalized()
 	velocity = direction * run_speed
 
+func run_to_ball(ball_pos):
+	var current_pos = global_position
+	navigation_agent_3d.target_position = ball_pos
+	var next_pos = navigation_agent_3d.get_next_path_position()
+	var direction = (next_pos - current_pos).normalized()
+	velocity = direction * run_speed
+
 func _on_navigation_agent_3d_target_reached() -> void:
 	if ball_close:
 		state = STATE.Run
@@ -115,6 +122,7 @@ func _on_shoot_box_body_entered(body: Node3D) -> void:
 		shoot_ball(body)
 
 func shoot_ball(body):
+	Global.start_timer.emit()
 	state = STATE.Idle
 	has_ball = true
 	body.touched = true

@@ -10,6 +10,10 @@ signal point(value)
 signal scored_home
 signal scored_away
 signal score
+
+signal start_timer
+signal stop_timer
+
 var in_play = true
 var time_up = false
 var pass_ball = true

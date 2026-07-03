@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bdex3fejqtmfj"]
 
 [ext_resource type="Script" uid="uid://dggiuten3v4g1" path="res://Scripts/UI_BasketBall.gd" id="1_fm3gb"]
+[ext_resource type="Texture2D" uid="uid://beu8audlfecpt" path="res://Assets/Images/no_timeout.png" id="2_30hxj"]
 [ext_resource type="Texture2D" uid="uid://bb2rcrirtf3af" path="res://Assets/Images/ScoreBug.png" id="2_cnqbm"]
 
 [node name="BasketBall UI" type="Control" unique_id=1280335478]
@@ -13,6 +14,35 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_fm3gb")
 
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1927811213]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -226.185
+offset_top = -29.87
+offset_right = -98.185
+offset_bottom = 782.13
+grow_horizontal = 2
+scale = Vector2(0.18, 0.18)
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1951654872]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_30hxj")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer" unique_id=371718991]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_30hxj")
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer" unique_id=298186161]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_30hxj")
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1530879727]
 layout_mode = 1
 anchors_preset = 5
@@ -24,6 +54,18 @@ offset_right = 206.0
 offset_bottom = 135.37018
 grow_horizontal = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Team" type="Label" parent="." unique_id=923248122]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 98.0
+offset_right = -51.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=364935762]
 layout_mode = 1
@@ -94,7 +136,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=649760930]
-wait_time = 11.2
+wait_time = 10.0
 one_shot = true
 
 [node name="GoalTeam" type="Label" parent="." unique_id=361208275]
@@ -112,16 +154,51 @@ text = "Goal:           team should win"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Team" type="Label" parent="." unique_id=923248122]
+[node name="timeouts" type="Node2D" parent="." unique_id=1613828351]
+
+[node name="ColorRect2" type="ColorRect" parent="timeouts" unique_id=19319843]
+z_index = -1
+offset_left = 413.0
+offset_top = 2.0
+offset_right = 459.0
+offset_bottom = 85.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="timeouts" unique_id=2016730001]
+z_index = -1
+offset_left = 802.0
+offset_top = 2.0
+offset_right = 848.0
+offset_bottom = 85.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=740691990]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -120.0
-offset_top = 98.0
-offset_right = -51.0
-offset_bottom = 133.0
+offset_left = 184.32501
+offset_top = -29.87
+offset_right = 312.32538
+offset_bottom = 782.13
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 25
+scale = Vector2(0.18, 0.18)
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2" unique_id=139385176]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_30hxj")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer2" unique_id=854925773]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_30hxj")
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer2" unique_id=1101146208]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_30hxj")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

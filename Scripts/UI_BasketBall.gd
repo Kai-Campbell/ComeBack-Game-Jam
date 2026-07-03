@@ -8,15 +8,20 @@ extends Control
 @onready var away: Label = $Away
 var timedelta : float = 0.0
 var time_done = false
+var first_start = false
 
 var homescore = 0
 var awayscore = 0
 
 func _ready() -> void:
+	first_start = false
+	time_done = false
+	Global.start_timer.connect(start_process)
+	Global.stop_timer.connect(stop_process)
+	set_process(false)
 	Global.time_up = false
 	homescore += randi_range(50, 115)
 	awayscore = homescore + randi_range(-2, 2)
-	timer.start()
 	Global.scored_home.connect(increase_home)
 	Global.scored_away.connect(increase_away)
 	update_score_away()
@@ -39,20 +44,22 @@ func time_left_milli():
 	var mils = 1000 - fmod(timedelta, 1) * 1000
 	return mils
 
+func start_process():
+	if time_done == false:
+		set_process(true)
+	if first_start == false:
+		timer.start()
+		first_start = true
+
+func stop_process():
+	set_process(false)
+	timer.stop()
+
+
 func _process(delta: float) -> void:
-	await get_tree().create_timer(2.1).timeout
 	timedelta += delta
 	time.text = "%02d" % time_left_buzzer()
 	time_milli.text = "%03d" % time_left_milli()
-	if time_done == true:
-		time.text = "00"
-		time_milli.text = "000"
-	
-	''' stop time ?
-	if Global.in_play == false and Global.time_up != false:
-		timedelta = timedelta
-	'''
-	
 
 func increase_home(points : int):
 	homescore += points
@@ -72,9 +79,11 @@ func update_score_away():
 
 
 func _on_timer_timeout() -> void:
+	stop_process()
+	time.text = "00"
+	time_milli.text = "000"
 	time.set("theme_override_colors/font_color", Color("red"))
 	time_milli.set("theme_override_colors/font_color", Color("red"))
 	time_done = true
 	Global.time_up = true
 	Global.game_done.emit()
-	

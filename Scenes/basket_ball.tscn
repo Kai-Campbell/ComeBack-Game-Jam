@@ -1325,7 +1325,7 @@ ball_path = NodePath("../../Player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.56132, 23.709728, -239.81908)
 
 [node name="HomeBasket" type="Node3D" parent="." unique_id=101940175]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.916466, 14.391712, 76.68607)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.916466, 22.099272, 82.95126)
 
 [node name="BasketBall UI" parent="." unique_id=1280335478 instance=ExtResource("17_fjyny")]
 
