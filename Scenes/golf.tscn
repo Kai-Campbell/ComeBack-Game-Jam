@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dydvggoh3fyxy"]
 
-[ext_resource type="Script" uid="uid://pfti3w2lbbih" path="res://Scripts/golf.gd" id="1_5m186"]
+[ext_resource type="Script" uid="uid://pfti3w2lbbih" path="res://Scripts/levels/golf.gd" id="1_5m186"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_xhdtt"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_03c2v"]
 [ext_resource type="Material" uid="uid://bjgqvauoa4i20" path="res://Assets/textures/Tint Textures 1/256x256/Grass/Grass_08-256x256.tres" id="3_d31jh"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cd0ha3aqlucpd" path="res://Scenes/player.tscn" id="4_kw3ft"]
 [ext_resource type="Material" uid="uid://b33cy4x2imnc4" path="res://Assets/textures/Tiny Textures 2/256x256/Stone/Stone_08-256x256.tres" id="6_tjh1b"]
 [ext_resource type="Material" uid="uid://b0t7nj1ingcfe" path="res://Assets/textures/Tint Textures 1/256x256/Roofs/Roofs_11-256x256.tres" id="7_ngffo"]
+
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_doq0d"]
 _surfaces = [{

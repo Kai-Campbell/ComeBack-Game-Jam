@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://qqrk3iedp06x"]
 
-[ext_resource type="Script" uid="uid://cj3jx0sf7dos0" path="res://Scripts/win_screen.gd" id="1_l5sol"]
+[ext_resource type="Script" uid="uid://cj3jx0sf7dos0" path="res://Scripts/menus/win_screen.gd" id="1_l5sol"]
 [ext_resource type="AudioStream" uid="uid://bgg3k37qe4mr5" path="res://Assets/Music/WinSound.mp3" id="2_a00f1"]
+
 
 [node name="Win Screen" type="Control" unique_id=1560174519]
 process_mode = 3

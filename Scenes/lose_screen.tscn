@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dy7ob5jsncim5"]
 
-[ext_resource type="Script" uid="uid://dqxgu8he70mrn" path="res://Scripts/lose_screen.gd" id="1_s2rrh"]
+[ext_resource type="Script" uid="uid://dqxgu8he70mrn" path="res://Scripts/menus/lose_screen.gd" id="1_s2rrh"]
 [ext_resource type="AudioStream" uid="uid://dfqeiwodsn7mi" path="res://Assets/Music/LoseSound.mp3" id="2_488pv"]
+
 
 [node name="Lose Screen" type="Control" unique_id=947242274]
 process_mode = 3

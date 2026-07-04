@@ -1,12 +1,13 @@
 [gd_scene format=4 uid="uid://dkwh20rd7ipvd"]
 
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_0mm1t"]
-[ext_resource type="Script" uid="uid://2u7bjiigyt8" path="res://Scripts/soccer.gd" id="1_3hoaa"]
+[ext_resource type="Script" uid="uid://2u7bjiigyt8" path="res://Scripts/levels/soccer.gd" id="1_3hoaa"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_y2i4j"]
 [ext_resource type="Material" uid="uid://viblp51edbje" path="res://Assets/textures/Tint Textures 1/256x256/Grass/Grass_21-256x256.tres" id="3_ccr1i"]
 [ext_resource type="Texture2D" uid="uid://bwevdgogeewde" path="res://Assets/textures/Tint Textures 1/256x256/Tile/Tile_09-256x256.png" id="4_3hoaa"]
 [ext_resource type="Texture2D" uid="uid://cog56x6y3acyk" path="res://Assets/textures/Tint Textures 1/shittynet.png" id="5_6qxtd"]
 [ext_resource type="PackedScene" uid="uid://cd0ha3aqlucpd" path="res://Scenes/player.tscn" id="6_8jtpv"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fp7e"]
 albedo_texture = ExtResource("4_3hoaa")

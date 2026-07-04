@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1gjfipsxqn5q"
-path.s3tc="res://.godot/imported/Wood_15-256x256.png-8fdf0e7b7de315144b652a34f1b389bb.s3tc.ctex"
+uid="uid://bgtdu6gnkq1c8"
+path.s3tc="res://.godot/imported/swish.png-d170b787388e34d67cf7d514879f4d87.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/textures/Tint Textures 1/256x256/Wood/Wood_15-256x256.png"
-dest_files=["res://.godot/imported/Wood_15-256x256.png-8fdf0e7b7de315144b652a34f1b389bb.s3tc.ctex"]
+source_file="res://Assets/Images/swish.png"
+dest_files=["res://.godot/imported/swish.png-d170b787388e34d67cf7d514879f4d87.s3tc.ctex"]
 
 [params]
 

@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://b4v8pwfaqyxej"]
 
 [ext_resource type="VideoStream" uid="uid://cpcfi08f1hejl" path="res://Assets/Video/demo.ogv" id="1_8nhqh"]
-[ext_resource type="Script" uid="uid://cdh2sh4c6f4ro" path="res://Scripts/how_to.gd" id="1_kjlya"]
+[ext_resource type="Script" uid="uid://cdh2sh4c6f4ro" path="res://Scripts/menus/how_to.gd" id="1_kjlya"]
 [ext_resource type="Texture2D" uid="uid://4j7uucmmldsm" path="res://Assets/Images/wasd.png" id="3_j0hud"]
 [ext_resource type="Texture2D" uid="uid://8k8qn55pqbf5" path="res://Assets/Images/space.png" id="4_p3yrl"]
 [ext_resource type="AudioStream" uid="uid://cjg0yxcxnqes2" path="res://Assets/Music/HowToSong.mp3" id="5_p3yrl"]
+
 
 [node name="How TO" type="Control" unique_id=1811915658]
 process_mode = 3

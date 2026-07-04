@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqunpemph2g3x"]
 
 [ext_resource type="Texture2D" uid="uid://2wgs852mdbfa" path="res://Assets/Images/RadioBall.png" id="1_xbjkg"]
-[ext_resource type="Script" uid="uid://bykpsq7v2cyn6" path="res://Scripts/main_meu.gd" id="1_xsqy4"]
+[ext_resource type="Script" uid="uid://bykpsq7v2cyn6" path="res://Scripts/menus/main_meu.gd" id="1_xsqy4"]
 [ext_resource type="Texture2D" uid="uid://dsn6pugf00sg1" path="res://Assets/Images/Blurb.png" id="2_xsqy4"]
 [ext_resource type="FontFile" uid="uid://dq6yrx1vlo1s7" path="res://Assets/texts/Dream MMA.ttf" id="4_lybip"]
 [ext_resource type="AudioStream" uid="uid://byp5boq486c4x" path="res://Assets/Music/ShoveThisInaGameJamGame.mp3" id="5_vdkp3"]
