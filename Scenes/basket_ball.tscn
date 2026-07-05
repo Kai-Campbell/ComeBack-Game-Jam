@@ -18,9 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cv7nhohqyu10h" path="res://Scenes/ai.tscn" id="15_0bh4f"]
 [ext_resource type="Material" uid="uid://l7p4hchu12nf" path="res://Assets/Materials/Green.tres" id="16_setrc"]
 [ext_resource type="PackedScene" uid="uid://bdex3fejqtmfj" path="res://Scenes/basket_ball_ui.tscn" id="17_fjyny"]
-[ext_resource type="Texture2D" uid="uid://bfv3e5c5lj8uo" path="res://Assets/Images/net.png" id="18_j4d1b"]
 [ext_resource type="PackedScene" uid="uid://t7jm6h3ynw5h" path="res://Scenes/crowd.tscn" id="19_av135"]
-[ext_resource type="Texture2D" uid="uid://bgtdu6gnkq1c8" path="res://Assets/Images/swish.png" id="19_j4d1b"]
 [ext_resource type="AudioStream" uid="uid://b6uxbmpf54bhv" path="res://Assets/SFX/BackgroundBBall.mp3" id="20_31v4v"]
 [ext_resource type="PackedScene" uid="uid://cpo886rpps45k" path="res://Scenes/boy.tscn" id="21_ms55b"]
 [ext_resource type="PackedScene" uid="uid://fwmnad6x8sbr" path="res://Scenes/scary_guy.tscn" id="22_bed2t"]
@@ -506,71 +504,6 @@ points = PackedVector3Array(104.34332, 14.6495075, 83.12174, 104.34332, 14.17136
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3t733"]
 points = PackedVector3Array(105.09575, 14.6495075, 84.13341, 105.09575, 14.171362, 84.13341, 105.478386, 14.6495075, 83.771576, 105.478386, 14.171362, 83.771576, 104.34333, 14.6495075, 83.12174, 104.34333, 14.171362, 83.12174, 104.80202, 14.6495075, 82.86216, 104.80202, 14.171362, 82.86216)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pce7q"]
-atlas = ExtResource("19_j4d1b")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ukajt"]
-atlas = ExtResource("19_j4d1b")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ujqmh"]
-atlas = ExtResource("19_j4d1b")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xjxun"]
-atlas = ExtResource("19_j4d1b")
-region = Rect2(0, 48, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nem3s"]
-atlas = ExtResource("19_j4d1b")
-region = Rect2(48, 48, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2xvwt"]
-atlas = ExtResource("19_j4d1b")
-region = Rect2(96, 48, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_idpcj"]
-atlas = ExtResource("19_j4d1b")
-region = Rect2(0, 96, 48, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_n8frt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("18_j4d1b")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pce7q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ukajt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ujqmh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xjxun")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nem3s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2xvwt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_idpcj")
-}],
-"loop": true,
-"name": &"swish",
-"speed": 11.0
-}]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58076"]
 size = Vector3(1, 0.16503906, 1)
@@ -1103,48 +1036,8 @@ ball_path = NodePath("../../Player")
 [node name="AwayBasket" type="Node3D" parent="." unique_id=1093021645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.56132, 23.709728, -239.81908)
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="AwayBasket" unique_id=1460744821]
-transform = Transform3D(26.165, 0, 0, 0, 14.175, 0, 0, 0, 19.335, 0.8834915, -12.446262, 5.9063873)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_n8frt")
-
-[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="AwayBasket" unique_id=188165733]
-transform = Transform3D(-8.5586896e-07, 0, -19.335, 0, 14.175, 0, 19.58, 0, -8.4515966e-07, -5.0298386, -12.446262, 1.2207489)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_n8frt")
-
-[node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="AwayBasket" unique_id=570328035]
-transform = Transform3D(-8.5586896e-07, 0, -19.335, 0, 14.175, 0, 19.58, 0, -8.4515966e-07, 6.760071, -12.446262, 1.2207489)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_n8frt")
-
-[node name="AnimatedSprite3D4" type="AnimatedSprite3D" parent="AwayBasket" unique_id=443589389]
-transform = Transform3D(26.165, 0, 0, 0, 14.175, 0, 0, 0, 19.335, 0.8834915, -12.446262, -3.249939)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_n8frt")
-
 [node name="HomeBasket" type="Node3D" parent="." unique_id=101940175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.916466, 22.099272, 82.95126)
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="HomeBasket" unique_id=70227400]
-transform = Transform3D(26.165, 0, 0, 0, 14.175, 0, 0, 0, 19.335, -0.20269012, -11.110055, 2.8607101)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_n8frt")
-
-[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="HomeBasket" unique_id=1253500634]
-transform = Transform3D(-8.5586896e-07, 0, -19.335, 0, 14.175, 0, 19.58, 0, -8.4515966e-07, -6.11602, -11.110055, -1.8249283)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_n8frt")
-
-[node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="HomeBasket" unique_id=660847795]
-transform = Transform3D(-8.5586896e-07, 0, -19.335, 0, 14.175, 0, 19.58, 0, -8.4515966e-07, 5.533043, -11.110055, -1.8249283)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_n8frt")
-
-[node name="AnimatedSprite3D4" type="AnimatedSprite3D" parent="HomeBasket" unique_id=737458786]
-transform = Transform3D(26.165, 0, 0, 0, 14.175, 0, 0, 0, 19.335, -0.20269012, -11.110055, -6.295616)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_n8frt")
 
 [node name="BasketBall UI" parent="." unique_id=1280335478 instance=ExtResource("17_fjyny")]
 

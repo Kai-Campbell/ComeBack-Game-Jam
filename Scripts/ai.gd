@@ -139,7 +139,6 @@ func shoot_ball(body):
 	await get_tree().create_timer(0.5).timeout
 	body.freeze = false
 	if close:
-		print("close")
 		body.apply_central_impulse((random_hoop_pos - global_position).normalized() * shoot_strength * 1.1)
 	elif abs(global_position.z - random_hoop_pos.z) > 140:
 		body.apply_central_impulse((random_hoop_pos - global_position).normalized() * shoot_strength * 1.7)
